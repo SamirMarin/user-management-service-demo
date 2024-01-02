@@ -75,7 +75,7 @@ func TestToDynamoDbItemInput(t *testing.T) {
 	assert.Equal(t, expectedDynamodbItemInput, dynamodbItemInput)
 }
 
-func testCreateGetUser(t *testing.T) {
+func TestCreateGetUser(t *testing.T) {
 	creatUser := &User{
 		Username:  "testUser",
 		Email:     "testEmail",
