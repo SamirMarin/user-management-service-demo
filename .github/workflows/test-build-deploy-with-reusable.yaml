@@ -10,5 +10,5 @@ on:
       - main
 
 jobs:
-  test:
+  test-build-deploy:
     uses: samirmarin/github-actions-by-example-reusable-workflows/.github/workflows/reusable-test-build-deploy.yaml@build-test-deploy-reusable
