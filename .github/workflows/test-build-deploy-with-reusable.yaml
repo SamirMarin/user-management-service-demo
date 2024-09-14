@@ -11,4 +11,4 @@ on:
 
 jobs:
   test:
-    uses: samirmarin/github-actions-by-example-reusable-workflows/.github/workflows/reusable-test.yaml@build-test-deploy-reusable
+    uses: samirmarin/github-actions-by-example-reusable-workflows/.github/workflows/reusable-test-build-deploy.yaml@build-test-deploy-reusable
