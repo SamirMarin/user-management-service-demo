@@ -1,0 +1,14 @@
+name: test build deploy with reusable
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    uses: samirmarin/github-actions-by-example-reusable-workflows/.github/workflows/reusable-test.yaml@build-test-deploy-reusable
