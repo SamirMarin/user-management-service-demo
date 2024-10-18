@@ -1,0 +1,29 @@
+name: get label test
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: get-label
+        id: label
+        uses: SamirMarin/github-actions-by-example-reusable-workflows/.github/actions/get-labels-composite@composite-action-get-labels
+      - name: output label
+        run: |
+          echo ${{ steps.label.label-value }}
