@@ -28,4 +28,4 @@ jobs:
           label-key: bump
       - name: output label
         run: |
-          echo ${{ steps.label.label-value }}
+          echo ${{ steps.label.outputs.label-value }}
