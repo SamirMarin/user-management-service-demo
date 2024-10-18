@@ -24,6 +24,8 @@ jobs:
       - name: get-label
         id: label
         uses: SamirMarin/github-actions-by-example-reusable-workflows/.github/actions/get-labels-composite@composite-action-get-labels
+        with:
+          label-key: bump
       - name: output label
         run: |
           echo ${{ steps.label.label-value }}
