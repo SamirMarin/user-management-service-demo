@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - composite-action-get-labels
 
   pull_request:
     branches:
