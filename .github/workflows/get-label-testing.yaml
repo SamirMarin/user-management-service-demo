@@ -27,6 +27,7 @@ jobs:
         uses: SamirMarin/github-actions-by-example-reusable-workflows/.github/actions/get-labels-composite@composite-action-get-labels
         with:
           label-key: bump
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: output label
         run: |
           echo ${{ steps.label.outputs.label-value }}
