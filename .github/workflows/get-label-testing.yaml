@@ -24,10 +24,12 @@ jobs:
         uses: actions/checkout@v4
       - name: get-label
         id: label
-        uses: SamirMarin/github-actions-by-example-reusable-workflows/.github/actions/get-labels-composite@composite-action-get-labels
+        uses: SamirMarin/get-labels-action@node20-and-push-nolabel
         with:
-          label-key: bump
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          label_key: bump
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          label_value_order: "patch,minor,major,ignore"
+          default_label_value: patch
       - name: output label
         run: |
-          echo ${{ steps.label.outputs.label-value }}
+          echo ${{ steps.label.outputs.label_value }}
