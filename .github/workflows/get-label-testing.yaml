@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - test-custom-actions
+      - test-custom-actions-v2
 
   pull_request:
     branches:
