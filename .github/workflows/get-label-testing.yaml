@@ -24,8 +24,8 @@ jobs:
         uses: actions/checkout@v4
       - name: get-label
         id: label
-        #uses: SamirMarin/get-labels-action@node20-and-push-nolabel
-        uses: SamirMarin/get-labels-action@v0
+        uses: SamirMarin/get-labels-action@node20-and-push-nolabel
+        #uses: SamirMarin/get-labels-action@v0
         with:
           label_key: bump
           github_token: ${{ secrets.GITHUB_TOKEN }}
