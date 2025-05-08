@@ -76,7 +76,7 @@ func TestToDynamoDbItemInput(t *testing.T) {
 }
 
 func TestCreateGetUser(t *testing.T) {
-	creatUser := &User{
+	createUser := &User{
 		Username:  "testUser",
 		Email:     "testEmail",
 		Firstname: "testFirstname",
@@ -89,12 +89,12 @@ func TestCreateGetUser(t *testing.T) {
 			Renewal: time.Date(2024, time.January, 1, 0, 0, 0, 0, time.UTC),
 		},
 	}
-	err := creatUser.CreateUser()
+	err := createUser.CreateUser()
 	assert.Nil(t, err)
 	getUser := &User{
 		Username: "testUser",
 	}
 	err = getUser.GetUser()
 	assert.Nil(t, err)
-	assert.Equal(t, creatUser, getUser)
+	assert.Equal(t, createUser, getUser)
 }
