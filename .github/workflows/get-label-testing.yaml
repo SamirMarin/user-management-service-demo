@@ -1,0 +1,36 @@
+name: get label test
+
+on:
+  push:
+    branches:
+      - main
+      - test-custom-actions
+
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: get-label
+        id: label
+        uses: SamirMarin/get-labels-action@node20-and-push-nolabel
+        #uses: SamirMarin/get-labels-action@v0
+        with:
+          label_key: bump
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          label_value_order: "patch,minor,major,ignore"
+          default_label_value: patch
+      - name: output label
+        run: |
+          echo ${{ steps.label.outputs.label_value }}
